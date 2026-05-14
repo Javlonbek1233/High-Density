@@ -1,0 +1,8 @@
+{
+  "name": "VoltX",
+  "description": "Futuristic electric vehicle platform with real-time battery analytics, smart EV mapping, and AI driving assistance.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}

@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-voltx-cyan: #22d3ee;
+  --color-voltx-blue: #1e3a8a;
+  --color-voltx-dark: #020204;
+  --color-voltx-panel: #0c0c18;
+  --color-voltx-sidebar: #050508;
+  --color-voltx-border: #1a1a2e;
+}
+
+@layer base {
+  body {
+    @apply bg-voltx-dark text-[#e0e0e8] font-sans selection:bg-voltx-cyan/30;
+    min-height: 100vh;
+    background-image: 
+      radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.05) 0%, transparent 80%);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-voltx-panel border border-white/5 rounded-2xl;
+    box-shadow: inset 0 0 20px rgba(6, 182, 212, 0.02);
+  }
+  
+  .neon-border {
+    @apply border-voltx-cyan/30 shadow-[0_0_15px_rgba(34,211,238,0.1)];
+  }
+
+  .neon-text {
+    @apply text-voltx-cyan drop-shadow-[0_0_8px_rgba(34,211,238,0.3)];
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 cursor-pointer text-white/40 hover:text-voltx-cyan hover:bg-white/5;
+  }
+
+  .nav-item.active {
+    @apply text-voltx-cyan bg-voltx-cyan/5 border border-voltx-cyan/20;
+  }
+}
+
+.scanline {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  background-image: radial-gradient(#1e3a8a 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.05;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes scan {
+  0% { bottom: 100%; }
+  100% { bottom: -100px; }
+}
